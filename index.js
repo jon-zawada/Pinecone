@@ -53,7 +53,7 @@ app.post('/query', async (req, res) => {
 
     const queryVector = response.data[0].embedding;
 
-    const result = await index.query({
+    const result = await ns.query({
       topK: 3,
       vector: queryVector,
       includeMetadata: true,
